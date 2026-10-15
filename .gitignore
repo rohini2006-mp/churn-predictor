@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+frontend/node_modules/
+frontend/dist/
+backend/.mypy_cache/
+models/
+data/raw/
+data/local_auth.sqlite3
+data/local_auth.sqlite3-shm
+data/local_auth.sqlite3-wal
+*.joblib
+.DS_Store
+   data/telco_clean.csv
+   data/raw/
+   *.tsbuildinfo
+   data/telco_clean.csv
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal

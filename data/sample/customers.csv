@@ -1,0 +1,6 @@
+customer_id,tenure,monthly_charges,total_charges,usage,support_tickets,complaints,satisfaction_score,contract,internet_service,payment_method,phone_service,online_security,tech_support,churn
+CUS-20001,8,94,752,3,3,1,2.0,month-to-month,fiber_optic,electronic_check,yes,no,no,yes
+CUS-20002,48,58,2784,18,0,0,4.5,two_year,dsl,bank_transfer,yes,yes,yes,no
+CUS-20003,21,72,1512,9,1,0,3.4,one_year,fiber_optic,credit_card,yes,no,no,no
+CUS-20004,3,112,336,2,4,1,1.8,month-to-month,fiber_optic,electronic_check,yes,no,no,yes
+CUS-20005,61,44,2684,21,0,0,4.8,two_year,none,bank_transfer,no,no,no,no
