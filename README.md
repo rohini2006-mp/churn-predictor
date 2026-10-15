@@ -20,7 +20,11 @@ This first implementation slice is runnable locally and includes:
 The current slice intentionally uses an in-memory demo store so the full workflow can be exercised before wiring Supabase PostgreSQL/Auth/Storage. The database/backend/ML specifications remain the source of truth for the next implementation slice.
 
 ## Dataset and model
+The model is trained on the public **Telco Customer Churn** dataset (IBM sample data, available on Kaggle). The raw data is not included in this repository.
 
+1. Download the CSV from Kaggle and save it as `data/raw/telco_raw.csv`.
+2. From the project folder run `python prepare_telco.py`. It renames columns, fixes blank `TotalCharges` values, standardises the wording, and writes `data/telco_clean.csv`.
+3. Start the backend. It trains a Logistic Regression pipeline (imputation, scaling, one-hot encoding, balanced class weights) on an 80/20 stratified split.
 ## Results
 
 Trained on the Telco Customer Churn dataset (7,043 customers, ~26.5% churn) with an
@@ -51,12 +55,17 @@ Metrics come from a single train/test split with a fixed random seed.
 
 ## Run the backend
 
-```bash
-cd backend
-../.venv/bin/uvicorn app.main:app --reload --port 8000
-```
+From the project folder (Python 3.10 or newer):
 
-Open API docs at `http://localhost:8000/docs`.
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate      Mac/Linux: source .venv/bin/activate
+pip install -r backend/requirements.txt
+python prepare_telco.py
+cd backend
+uvicorn app.main:app --reload --port 8000
+```
+Open API docs at http://localhost:8000/docs
 
 ## Run the frontend
 
